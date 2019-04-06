@@ -1,0 +1,13 @@
+#p {
+    background: lightgray;
+    color: black;
+    width:  33%;
+    font-size: 15pt;
+    text-align: center;
+    padding: 6px;
+    border: 12px solid black;
+    border-top-right-radius: 80px;
+    border-bottom-left-radius: 80px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+ }
