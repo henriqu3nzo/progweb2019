@@ -1,0 +1,22 @@
+body { 
+	background-image: url("Imagens/ducal.jpg"); 
+	background-size: 1220px 817px;
+	background-repeat: no-repeat;
+    background-position: 50% 0px;
+    background-color: rgb(180, 221, 221)
+
+ }
+
+
+
+ .caixa-de-texto { 
+ 	margin: 70px 150px;
+    border: 12px solid rgb(126, 96, 67);
+    font-size: 15pt;
+  	border-radius: 20px; 
+  	width: 25%;
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+  }
+
+
