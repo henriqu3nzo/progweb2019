@@ -1,0 +1,4 @@
+*Erro 01: na linha 04 foi aberto uma tag "<comment>" na intenção de comentar algo porém no HTML utiliza-se "<!-- -->";
+*Erro 02: na linha 11 tem um seletor de ID mal posicionado, ele devia estar antes da chave que abre o bloco na linha 10;
+*Erro 03: na linha 17 uma tag "<span>" é aberta, mas não é fechada com </span>;
+*Erro 04: ma linha 27 nenhum valor é passado como parâmetro da função imediata;

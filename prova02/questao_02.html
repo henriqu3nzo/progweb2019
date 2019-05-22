@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lei Turca</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+	<input type="texto">
+		<script>
+		document.addEventListener('keypress', function(evt) {
+			if (evt.key == 'q' || evt.key == 'Q' ||  evt.key == 'w' || evt.key == 'W' || evt.key == 'x' || evt.key == 'X') {
+				evt.preventDefault()
+				alert('Não é permitido digitar esse caractere');
+			}
+		});
+		</script>
+	</body>
+</html>
