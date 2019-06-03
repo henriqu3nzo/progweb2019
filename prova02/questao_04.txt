@@ -1,0 +1,20 @@
+O hoisting trabalha o processo de adiantar(hoist) a declaração de uma variável
+para o início do escopo no qual ela está inserida. Essa característica permite 
+a utilização da variável mesmo que esta tenha sido
+declarada e ainda não atribuída pelo operador "=". O hoisting
+já permite o conhecimento da variável internamente, além disso o hoisting afeta 
+qualquer artefato atribuível, tais como: funções, variáveis e etc.
+Um exemplo de hoisting com funções:
+
+
+Ex:
+
+	funcion ExibirNome(){
+		console.log(nome);
+
+		function nome(){
+			return "Enzo Henrique"
+		}
+	}
+
+	ExibirNome();
