@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gráfico de barras</title>
+    <style>
+        div{
+            margin: 2px;
+        }
+        #coluna1{
+            background-color: red;
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+        }
+        #coluna2{
+            background-color: red;
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+        }
+        #coluna3{
+            background-color: red;
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+        }
+        #coluna4{
+            background-color: red;
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+        }
+        #coluna5{
+            background-color: red;
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    Informe a altura das barras: <input id="hight1" type="number">
+    <input id="hight2" type="number">
+    <input id="hight3" type="number">
+    <input id="hight4" type="number">
+    <input id="hight5" type="number">
+    <br>
+    Informe as larguras das barras: <input id='largura' type="number">
+
+    <br>
+    <button id="desenhar">Desenhar o gráfico</button>
+    <br>
+    <div id="coluna1"></div>
+    <div id="coluna2"></div>
+    <div id="coluna3"></div>
+    <div id="coluna4"></div>
+    <div id="coluna5"></div>
+    <script>
+        var botao = document.getElementById('desenhar');
+        botao.onclick = function(){
+            for(var i = 1; i <= 5; i++){
+                var altura = document.getElementById('hight' + i);
+                var largura = document.getElementById('largura');
+                var coluna = document.getElementById('coluna' + i);
+                coluna.style.height = altura.value + "px";
+                coluna.style.width = largura.value + "px";
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>
