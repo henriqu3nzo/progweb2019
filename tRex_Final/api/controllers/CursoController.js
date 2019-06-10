@@ -6,7 +6,10 @@
  */
 
 module.exports = {
-  index: async function(req, res) {},
+  index: async function(req, res) {
+    var cursos = await Curso.find();
+    res.view('curso/index', {cursos:cursos});
+  },
   create: async function(req, res) {},
   read: async function(req, res) {},
   update: async function(req, res) {},

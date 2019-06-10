@@ -16,7 +16,7 @@ module.exports.routes = {
   'GET /':                   { action: 'view-homepage-or-redirect' },
   'GET /welcome/:unused?':   { action: 'dashboard/view-welcome' },
 
-  'GET /sobre':                { action:   'view-sobre' },
+  'GET /sobre':              { action:   'view-sobre' },
   'GET /faq':                { action:   'view-faq' },
   'GET /legal/terms':        { action:   'legal/view-terms' },
   'GET /legal/privacy':      { action:   'legal/view-privacy' },
@@ -34,9 +34,9 @@ module.exports.routes = {
   'GET /account/password':   { action: 'account/view-edit-password' },
   'GET /account/profile':    { action: 'account/view-edit-profile' },
 
-  'GET /curso': { action: 'curso/index' },
+  'GET /curso':              { action: 'curso/index' },
+  'GET /curso/create':       { action: 'curso/create' },
   'GET /curso/read/:cursoId': { action: 'curso/read' },
-  'GET /curso/create': { action: 'curso/create' },
   'GET /curso/update/:cursoId': { action: 'curso/update' },
   'GET /curso/delete/:cursoId': { action: 'curso/delete' },
 
