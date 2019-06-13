@@ -1,3 +1,6 @@
+David: Hoisting definido corretamente. Código de exemplo correto.
+Nota: 2.0
+
 O hoisting trabalha o processo de adiantar(hoist) a declaração de uma variável
 para o início do escopo no qual ela está inserida. Essa característica permite 
 a utilização da variável mesmo que esta tenha sido
