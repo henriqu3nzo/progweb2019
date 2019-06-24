@@ -27,6 +27,27 @@
     //Constantes
     const FPS = 300;
     const PROB_NUVEM = 5;
+
+    document.getElementById('gameover').addEventListener('click', function(req, res)){
+        clearInterval(correr);
+        $.ajax({
+            method: 'post',
+            url:'/salvarPontuacao',
+            data: {
+                pontuacao: pontuacao,
+                _csrf: document.getElementBy('_csrf').value,
+            },
+            success: function(){
+
+            } 
+        });
+    }
+
+    document.getElementById('iniciar').addEventListener('click'){
+        pontuacao = 0;
+        correr = setInterval(Corre, 1000/FPS);
+    }
+    
     
     
     function Controle(){
