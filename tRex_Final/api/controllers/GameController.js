@@ -11,11 +11,12 @@ module.exports = {
        },
 
     salvarPontuacao: async function(req, res){
-        await Jogada.create({
-            jogador: req.me.id,
-            pontuacao: req.body.pontuacao,
-        });
-       // res.end('Pontuacao salava' + )
-    }
+        console.log('chegou');
+		await Jogada.create({
+			usuario:req.me.id,
+			pontuacao:req.body.pontuacao
+		});
+		res.end('Pontuacao salva');
+	}
 };
 

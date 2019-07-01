@@ -11,8 +11,38 @@
         </div>
     </div>
 
- <!--   <%= if(typeError == 'undefined') %>
-        <p></p> -->
+ 
+<% if (typeof error !== 'undefined'){ %>
+	<p><%= error %></p>
+
+<% } %>
+
+<form action="/curso/create" method="post" class="px-5">
+<div class="form-group" >
+    <label for="sigla">Sigla</label>
+    <input type="text" class="form-control" id="sigla" name="sigla" placeholder="FT05">
+  	
+  </div>
+
+ <div class="form-group">
+    <label for="nome">Nome</label>
+    <input type="text" class="form-control" id="nome" name="nome" placeholder="Curso nome">
+  	
+  </div>
+
+ <div class="form-group">
+    <label for="desc">Descricao</label>
+    <input type="text" class="form-control" id="desc" name="desc">
+  	
+  </div>
+
+
+  <input type="hidden" name="_csrf" value="<%= _csrf %>">
+
+
+    <button   class="btn btn-primary">Submit</button>
+
+</form>
 
 
 </div>

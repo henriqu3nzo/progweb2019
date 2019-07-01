@@ -11,7 +11,25 @@ module.exports = {
     res.view('curso/index', {cursos:cursos});
   },
   create: async function(req, res) {
-    
+    if(req.route.methods.get){
+      res.view('curso/create');
+    }else{
+      console.log(req.body.sigla);
+      console.log(req.body.nome);
+      console.log(req.body.desc);
+        Curso.create({
+          
+          sigla:req.body.sigla,
+          nome:req.body.nome,
+          descricao:req.body.desc
+        })
+        .then(function(){
+          res.redirect('/curso');
+        })
+        .catch(function(error){
+            res.view('curso/create',{error:error})
+        })
+    }
   },
   read: async function(req, res) {},
   update: async function(req, res) {},

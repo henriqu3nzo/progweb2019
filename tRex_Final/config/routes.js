@@ -14,6 +14,7 @@ module.exports.routes = {
   //  ║║║║╣ ╠╩╗╠═╝╠═╣║ ╦║╣ ╚═╗
   //  ╚╩╝╚═╝╚═╝╩  ╩ ╩╚═╝╚═╝╚═╝
   'GET /':                   { action: 'game/trex' },
+  'POST /pontuacao':       { action: 'game/salvarPontuacao' },
   'GET /welcome/:unused?':   { action: 'dashboard/view-welcome' },
 
   'GET /sobre':              { action:   'view-sobre' },
@@ -36,6 +37,7 @@ module.exports.routes = {
 
   'GET /curso':              { action: 'curso/index' },
   'GET /curso/create':       { action: 'curso/create' },
+  'POST /curso/create'   :    { action: 'curso/create'},
   'GET /curso/read/:cursoId': { action: 'curso/read' },
   'GET /curso/update/:cursoId': { action: 'curso/update' },
   'GET /curso/delete/:cursoId': { action: 'curso/delete' },

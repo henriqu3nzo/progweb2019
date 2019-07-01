@@ -28,7 +28,7 @@
     const FPS = 300;
     const PROB_NUVEM = 5;
 
-    document.getElementById('gameover').addEventListener('click', function(req, res)){
+  /*  document.getElementById('gameover').addEventListener('click', function(req, res)){
         clearInterval(correr);
         $.ajax({
             method: 'post',
@@ -41,14 +41,15 @@
 
             } 
         });
+    } */
+
+    document.getElementById('iniciar').onclick = function(){
+        document.getElementById("jogo").innerHTML = "";
+        init();
+        dino.status = 0;
+        Controle();
     }
 
-    document.getElementById('iniciar').addEventListener('click'){
-        pontuacao = 0;
-        correr = setInterval(Corre, 1000/FPS);
-    }
-    
-    
     
     function Controle(){
         correr = setInterval(Corre, 1000/FPS);
@@ -63,7 +64,8 @@
     }
     //Função responsável por reiniciar o jogo;
     function recomecarJogo(){
-        document.body.innerHTML = "";
+        //document.body.innerHTML = "";
+        document.getElementById("jogo").innerHTML = "";
         Pausar();
         init();
         
@@ -102,9 +104,10 @@
     window.addEventListener("keydown", function (e) {
         if(dino.element.style.backgroundPositionX == dino.sprites.morto) return;
         if(e.key == "ArrowUp"){
-            if(!correndo){
+           /* if(!correndo){
                 Controle();
-            }else if(dino.status==0){
+            }else */
+            if(dino.status==0){
                 dino.status = 1;
             }
         }else if(e.key == "ArrowDown"){
@@ -120,7 +123,7 @@
             }
         }
     });
-
+    
     window.addEventListener("keyup", function (e) {
         if(dino.element.style.backgroundPositionX == dino.sprites.morto) return;
         if(e.key == "ArrowDown"){
@@ -187,7 +190,9 @@ class Deserto {
         constructor() {
             this.element = document.createElement("div");
             this.element.className = "deserto";
-            document.body.appendChild(this.element);
+           // document.body.appendChild(this.element);
+           document.getElementById("jogo").appendChild(this.element);
+           
             this.chao = document.createElement("div");
             this.chao.className = "chao";
             this.chao.style.backgroundPositionX = "0px";

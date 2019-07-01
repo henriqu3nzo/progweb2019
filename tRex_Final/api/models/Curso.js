@@ -12,24 +12,25 @@ module.exports = {
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
-    sigla: {
-      type: 'string',
-      maxLength: 4,
-      columnType: 'char(4)',
-  
+    nome:{
+        type:'string',
+        maxLength:100,
+        columnType:'varchar(100)'  
     },
-  
-    nome: {
-      type: 'string',
-      maxLength: 100,
-      columnType: 'varchar(100)',
+    sigla:{
+        type:'string',
+        maxLength:5,
+        columnType:'char(5)'
     },
-  
-    descricao: {
-      type: 'string',
-      columnType: 'text',
-    },
+    descricao:{
+        type:'string',
+        columnType:'text'  
+    },   
 
+    alunos:{
+      collection: 'User',
+      via:'curso'
+  }
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
     //  ╚═╝╩ ╩╚═╝╚═╝═╩╝╚═╝
@@ -38,6 +39,7 @@ module.exports = {
     //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
+
 
   },
 
