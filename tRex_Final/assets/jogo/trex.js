@@ -84,6 +84,19 @@
         recomecar.element.style.visibility = "visible";
         fimDeJogo.element.style.visibility = "visible";
         dino.element.style.backgroundPositionX = dino.sprites.morto;
+
+        $.ajax({
+            method:'POST',
+            url:'/pontuacao',
+            data:{
+                'pontuacao': pontuacao,
+                '_csrf':document.getElementById('_csrf').value,
+            },
+        
+            success: function(data){
+                console.log(data);
+            }
+        });
     }
     //Função que inicia todos os parâmetros do jogo;
     function init() {
