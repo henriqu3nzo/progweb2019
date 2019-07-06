@@ -17,7 +17,6 @@ module.exports.policies = {
   'curso/*': true,
   'account/logout': true,
   'view-homepage-or-redirect': true,
-  'game/trex': true,
   'view-faq': true,
   'view-sobre': true,
   'view-contact': true,
