@@ -31,13 +31,28 @@ module.exports = {
         })
     }
   },
-  read: async (req, res) => { },
+  read: async (req, res) => {
+    let id = req.param('id')
+    let curso = await Curso.findOne({ id })
+
+    let resp = {
+      title: `Visualizar dados do curso`,
+      sigla: curso.sigla,
+      nome: curso.nome,
+      descricao: curso.descricao,
+	}
+
+	    res.view('curso/read', resp);
+  },
 
   update: async (req, res) => {
 
         try {
             let { id, nome, sigla, descricao } = req.body
-            let updateCurso = { nome, sigla, descricao }
+            let updateCurso = { 
+              nome, 
+              sigla, 
+              descricao }
             let cursoUpdate = await Curso.updateOne({ id }).set(updateCurso)
             res.redirect('/curso')
         } catch (err) {
@@ -46,7 +61,15 @@ module.exports = {
         }
 
     },
-  delete: async function(req, res) {},
+    delete: async (req, res) => {
+      try {
+          let id = req.param('id')
+          let eraseOk = await Curso.destroyOne({ id })
+          res.redirect('/curso')
+      } catch (err) {
+          res.send(err)
+      }
+  },
 
 };
 
