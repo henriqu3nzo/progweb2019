@@ -31,8 +31,21 @@ module.exports = {
         })
     }
   },
-  read: async function(req, res) {},
-  update: async function(req, res) {},
+  read: async (req, res) => { },
+
+  update: async (req, res) => {
+
+        try {
+            let { id, nome, sigla, descricao } = req.body
+            let updateCurso = { nome, sigla, descricao }
+            let cursoUpdate = await Curso.updateOne({ id }).set(updateCurso)
+            res.redirect('/curso')
+        } catch (err) {
+            console.log(err)
+            res.send(err)
+        }
+
+    },
   delete: async function(req, res) {},
 
 };

@@ -12,6 +12,11 @@ module.exports = {
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
+    id: {
+      autoIncrement: true,
+      unique: true,
+      type: 'number'
+    },
     nome:{
         type:'string',
         maxLength:100,
@@ -28,8 +33,7 @@ module.exports = {
     },   
 
     alunos:{
-      collection: 'User',
-      via:'curso'
+      model: 'User'
   }
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗

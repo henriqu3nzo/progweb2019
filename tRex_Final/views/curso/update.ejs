@@ -1,0 +1,57 @@
+<div id='curso-create' class="mt-2">
+    <div class="container">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/curso">Curso</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Criar curso</li>
+            </ol>
+        </nav>
+
+        <h2>Criar Curso</h2>
+
+        <% if(typeof update != "undefined" && update){%>
+        <form action="/curso/update/<%= id %>" method="post" class="mt2">
+            <%}else{%>
+            <form action="/curso" method="post" class="mt2">
+                <% } %>
+
+                <div class="form-group">
+                    <label for="sigla">Sigla</label>
+                    <% if(typeof sigla != "undefined"){ %>
+                    <input type="text" id="sigla" name="sigla" class="form-control" placeholder="IE07"
+                        value="<%= sigla %>" required>
+                    <% }else{ %>
+                    <input type="text" id="sigla" name="sigla" class="form-control" placeholder="IE07" required>
+                    <% } %>
+                </div>
+                <div class="form-group">
+                    <label for="nome">Nome do curso</label>
+                    <% if(typeof nome != "undefined"){ %>
+                    <input type="text" id="nome" name='nome' class="form-control" placeholder="Ciência da Computação"
+                        value="<%= nome %>"" required>
+                <% }else{ %>
+                    <input type=" text" id="nome" name='nome' class="form-control" placeholder="Ciência da Computação"
+                        required>
+                    <% } %>
+                </div>
+                <div class=" form-group">
+                    <label for="desc">Descrição</label>
+                    <% if(typeof descricao != "undefined"){ %>
+                    <textarea id="desc" class="form-control" name="descricao" cols="30"
+                        rows="5"><%= descricao %></textarea>
+                    <% }else{ %>
+                    <textarea id="desc" class="form-control" name="descricao" cols="30" rows="5"></textarea>
+                    <% } %>
+                </div>
+                <input type="hidden" name="_csrf" value="<%= _csrf %>">
+
+                <% if(typeof update != "undefined" && update){ %>
+                <input type="hidden" name="id" value="<%= id %>">
+                <%}%>
+                <input type="submit" class="btn btn-success" value="Salvar">
+            </form>
+
+    </div>
+</div>
