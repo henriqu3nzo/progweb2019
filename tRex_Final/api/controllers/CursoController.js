@@ -33,33 +33,40 @@ module.exports = {
   },
   read: async (req, res) => {
     let id = req.param('id')
-    let curso = await Curso.findOne({ id })
+    let cursoOk = await Curso.findOne({ id })
 
     let resp = {
       title: `Visualizar dados do curso`,
-      sigla: curso.sigla,
-      nome: curso.nome,
-      descricao: curso.descricao,
+      sigla: cursoOk.sigla,
+      nome: cursoOk.nome,
+      descricao: cursoOk.descricao,
 	}
 
-	    res.view('curso/read', resp);
+	    return res.view('curso/read', resp);
   },
 
   update: async (req, res) => {
-
+    let id = req.param('id')
+    let cursoOk = await Curso.findOne({ id })
+  
+    let resp = {
+      title: `Atualizar dados do curso`,
+      sigla: cursoOk.sigla,
+      nome: cursoOk.nome,
+      descricao: cursoOk.descricao,
+      id,
+      update: true
+    }
         try {
             let { id, nome, sigla, descricao } = req.body
-            let updateCurso = { 
-              nome, 
-              sigla, 
-              descricao }
+            let updateCurso = { nome, sigla, descricao }
             let cursoUpdate = await Curso.updateOne({ id }).set(updateCurso)
             res.redirect('/curso')
         } catch (err) {
             console.log(err)
             res.send(err)
         }
-
+        return res.view('curso/update', resp);
     },
     delete: async (req, res) => {
       try {
