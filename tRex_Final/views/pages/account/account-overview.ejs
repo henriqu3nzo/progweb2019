@@ -39,6 +39,22 @@
       <div class="col"><strong>••••••••••</strong></div>
     </div>
     <hr/>
+    <div class="row mb-3">
+      <div class="col-sm-6">
+        <h4>Meu curso na UFAM</h4>
+      </div>
+      <div class="col-sm-6">
+        <span class="float-sm-right">
+          <a class="btn btn-sm btn-outline-info account-settings-button" href="/account/curso">Editar curso</a>
+        </span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3">Curso:</div>
+      <div class="col"><strong>{{me.curso}}</strong></div> 
+    
+    </div>
+    <hr/>
     <div class="row mb-3" v-if="isBillingEnabled">
       <div class="col-sm-6">
         <h4>Billing</h4>

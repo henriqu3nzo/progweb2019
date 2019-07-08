@@ -1,0 +1,27 @@
+<div id='selecionar-curso'>
+    <div class="container mt-4">
+        <div class="row">
+            <h1>Selecionar curso</h1>
+        </div>
+        <hr />
+        <div class="row">
+            <p>Selecione seu curso na UFAM:</p>
+        </div>
+        <div class="row">
+            <form action="/account/curso" method="POST">
+                <input type="hidden" name="_csrf" value="<%= _csrf%>">
+                <div class="form-group">
+                    <select class="custom-select" name="select">
+                        <% cursos.forEach((elemento)=> {%>
+                        <option><%= elemento.nome %></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <a href="/account" class="btn btn-outline-info">Cancelar</a>
+                    <input type="submit" class="btn btn-dark">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

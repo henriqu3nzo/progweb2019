@@ -1,15 +1,15 @@
-<div id='curso-create' class="mt-2">
+<div id='updateCurso' class="mt-2">
     <div class="container">
 
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
                 <li class="breadcrumb-item"><a href="/curso">Curso</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Criar curso</li>
+                <li class="breadcrumb-item active" aria-current="page">Editar curso</li>
             </ol>
         </nav>
 
-        <h2>Criar Curso</h2>
+        <h2>Editar Curso</h2>
 
         <% if(typeof update != "undefined" && update){%>
         <form action="/curso/update/<%= id %>" method="post" class="mt2">
@@ -50,7 +50,7 @@
                 <% if(typeof update != "undefined" && update){ %>
                 <input type="hidden" name="id" value="<%= id %>">
                 <%}%>
-                <input type="submit" class="btn btn-dark" value="Salvar">
+                <input type="submit" class="btn btn-dark" value="Atualizar">
             </form>
 
     </div>

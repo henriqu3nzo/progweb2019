@@ -48,6 +48,7 @@
         init();
         dino.status = 0;
         Controle();
+        document.getElementById('iniciar').style.display = "none";
     }
 
     
@@ -65,6 +66,7 @@
     //Função responsável por reiniciar o jogo;
     function recomecarJogo(){
         //document.body.innerHTML = "";
+        document.getElementById('iniciar').style.display = "block";
         document.getElementById("jogo").innerHTML = "";
         Pausar();
         init();
@@ -196,6 +198,7 @@ class Recomecar {
                 }
             }
         }
+
     }
 
 

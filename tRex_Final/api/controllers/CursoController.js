@@ -14,9 +14,6 @@ module.exports = {
     if(req.route.methods.get){
       res.view('curso/create');
     }else{
-      console.log(req.body.sigla);
-      console.log(req.body.nome);
-      console.log(req.body.desc);
         Curso.create({
           
           sigla:req.body.sigla,
@@ -33,45 +30,33 @@ module.exports = {
   },
   read: async (req, res) => {
     let id = req.param('id')
-    let cursoOk = await Curso.findOne({ id })
+    let curso = await Curso.findOne({ id })
 
     let resp = {
-      title: `Visualizar dados do curso`,
-      sigla: cursoOk.sigla,
-      nome: cursoOk.nome,
-      descricao: cursoOk.descricao,
+      sigla: curso.sigla,
+      nome: curso.nome,
+      descricao: curso.descricao,
 	}
 
 	    return res.view('curso/read', resp);
   },
 
   update: async (req, res) => {
-    let id = req.param('id')
-    let cursoOk = await Curso.findOne({ id })
-  
-    let resp = {
-      title: `Atualizar dados do curso`,
-      sigla: cursoOk.sigla,
-      nome: cursoOk.nome,
-      descricao: cursoOk.descricao,
-      id,
-      update: true
+    try {
+        let { id, nome, sigla, descricao } = req.body
+        let atualizarCurso = { nome, sigla, descricao }
+        let cursoUpdate = await Curso.updateOne({ id }).set(atualizarCurso)
+        res.redirect('/curso')
+    } catch (err) {
+        console.log(err)
+        res.send(err)
     }
-        try {
-            let { id, nome, sigla, descricao } = req.body
-            let updateCurso = { nome, sigla, descricao }
-            let cursoUpdate = await Curso.updateOne({ id }).set(updateCurso)
-            res.redirect('/curso')
-        } catch (err) {
-            console.log(err)
-            res.send(err)
-        }
-        return res.view('curso/update', resp);
+        
     },
     delete: async (req, res) => {
       try {
           let id = req.param('id')
-          let eraseOk = await Curso.destroyOne({ id })
+          let apagado = await Curso.destroyOne({ id })
           res.redirect('/curso')
       } catch (err) {
           res.send(err)

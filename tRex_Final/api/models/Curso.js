@@ -24,8 +24,8 @@ module.exports = {
     },
     sigla:{
         type:'string',
-        maxLength:5,
-        columnType:'char(5)'
+        maxLength:4,
+        columnType:'char(4)'
     },
     descricao:{
         type:'string',
